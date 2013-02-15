@@ -25,6 +25,10 @@ public class Display {
 	// buttons
 	private JPanel pnlNext = new JPanel();
 	private JButton btnNext = new JButton("Roll");
+	private JPanel pnlReveal = new JPanel();
+	private JButton btnReveal = new JButton("Reveal Algorithm");
+	
+	private String currAlg;
 	
 	// constructor for the display
 	public Display() {
@@ -40,10 +44,12 @@ public class Display {
 		
 		// add buttons
 		pnlNext.add(btnNext);
+		pnlReveal.add(btnReveal);
 		
 		// set up the frame
 		f.getContentPane().setLayout(new BorderLayout());
 		f.getContentPane().add(pnlNext, BorderLayout.SOUTH);
+		f.getContentPane().add(pnlReveal, BorderLayout.CENTER);
 		
 		f.addWindowListener(new ListenCloseWdw());
 		
@@ -51,14 +57,24 @@ public class Display {
 		
 		// instantiate the set of algorithms
 		final Set algorithms = new Set();
-		System.out.println(algorithms.pickRandom());
 		
-		// button
+		// ~~~ button actions ~~~
+		
+		// pick a random algorithm
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ev) {
-				System.out.println(algorithms.pickRandom());
+				currAlg = algorithms.pickRandom();
+				System.out.println(currAlg);
 			}
 		});
+		
+		// display the algorithm's moves
+		btnReveal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ev) {
+				System.out.println(algorithms.getAlgorithm(currAlg));
+			}
+		});
+		
 	}
 
 	
