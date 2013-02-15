@@ -3,8 +3,8 @@ import java.util.Random;
 
 
 public class Set {
-	private ArrayList<String> algNames;
-	private ArrayList<String> algMoves;
+	protected ArrayList<String> algNames;
+	protected ArrayList<String> algMoves;
 	
 	public Set() {
 		
@@ -60,7 +60,7 @@ public class Set {
 		// ~~NEED TO ADD OLLS~~
 	}
 	
-	public String pickRandom() {
+	protected String pickRandom() {
 		
 		// random number generator
 		Random rand = new Random();
@@ -69,7 +69,7 @@ public class Set {
 	}
 	
 	// get moves for an algorithm given its name
-	public String getAlgorithm(String n) {
+	protected String getAlgorithm(String n) {
 		return algMoves.get(algNames.indexOf(n));
 	}
 }
