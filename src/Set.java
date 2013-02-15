@@ -34,6 +34,7 @@ public class Set {
 		algNames.add("N (b)");
 		algNames.add("N (a)");
 		
+		// initialize moves of all the algorithms
 		algMoves.add("x [(R' U R') D2] [(R U' R') D2] R2");
 		algMoves.add("x' [(R U' R) D2] [(R' U R) D2] R2");
 		algMoves.add("[R U'] [R U] [R U] [R U'] R' U' R2");
