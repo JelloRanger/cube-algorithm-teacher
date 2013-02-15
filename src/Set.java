@@ -3,8 +3,8 @@ import java.util.Random;
 
 
 public class Set {
-	private ArrayList<String> algNames;
-	private ArrayList<String> algMoves;
+	protected ArrayList<String> algNames;
+	protected ArrayList<String> algMoves;
 	
 	public Set() {
 		
